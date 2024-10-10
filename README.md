@@ -9,7 +9,7 @@ Esta es una aplicación para diferenciar diferentes formas de realizar una multi
 Make sure you have the following installed:
 
 - CMake (version 3.10 or higher)
-- A C compiler (e.g., g++, clang)
+- A C compiler (e.g., gcc, clang)
 - OpenMP support in your compiler
 
 ## Build Instructions
