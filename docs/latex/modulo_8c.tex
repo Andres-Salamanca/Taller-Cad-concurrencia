@@ -1,0 +1,309 @@
+\hypertarget{modulo_8c}{}\doxysection{modulo.\+c File Reference}
+\label{modulo_8c}\index{modulo.c@{modulo.c}}
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}modulo.\+h\char`\"{}}\newline
+Include dependency graph for modulo.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{modulo_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{modulo_8c_af55149bc1f05cf18af067a302e31e3f9}{DATA\+\_\+\+SIZE}}~(1024$\ast$1024$\ast$64$\ast$3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{modulo_8c_adbe280fa8ac0175ef5bfefaf47e0b400}{Inicio\+Muestra}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa la medición de tiempo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{modulo_8c_a9ad5337e8c642a7394ce78f6db0587c7}{Fin\+Muestra}} ()
+\begin{DoxyCompactList}\small\item\em Finaliza la medición de tiempo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{modulo_8c_ac4ab20b0c0f03e650a3234ff1af62d38}{Muestra}} ()
+\begin{DoxyCompactList}\small\item\em Muestra el tiempo transcurrido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{modulo_8c_a56087d13d537c07c9032bb105969b412}{imp\+Matrix}} (size\+\_\+t $\ast$matrix, int D, int t)
+\begin{DoxyCompactList}\small\item\em Imprime la matriz según el formato de impresión especificado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{modulo_8c_a257708eabe3e8419e0630ad1395c0d4f}{ini\+Matrix}} (size\+\_\+t $\ast$m1, size\+\_\+t $\ast$m2, int D)
+\begin{DoxyCompactList}\small\item\em Inicializa dos matrices con valores aleatorios. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{modulo_8c_aedbf550d79b1762bb9af55e22da5d589}{multi\+Matrix\+Clasica}} (size\+\_\+t $\ast$\mbox{\hyperlink{modulo_8h_a019f93ac73a4f7134d42403814fed306}{mA}}, size\+\_\+t $\ast$\mbox{\hyperlink{modulo_8h_ac8572cd8076da4e4134cfb2c6b4d75bf}{mB}}, size\+\_\+t $\ast$\mbox{\hyperlink{modulo_8h_a54fc132349c88dd90e32a9348f613583}{mC}}, int D)
+\begin{DoxyCompactList}\small\item\em Multiplica dos matrices usando el algoritmo clásico (fila x columna). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{modulo_8c_af6debcb3a740cdc3a7675c8ac49a1843}{multi\+Matrix\+Transpuesta}} (size\+\_\+t $\ast$\mbox{\hyperlink{modulo_8h_a019f93ac73a4f7134d42403814fed306}{mA}}, size\+\_\+t $\ast$\mbox{\hyperlink{modulo_8h_ac8572cd8076da4e4134cfb2c6b4d75bf}{mB}}, size\+\_\+t $\ast$\mbox{\hyperlink{modulo_8h_a54fc132349c88dd90e32a9348f613583}{mC}}, int D)
+\begin{DoxyCompactList}\small\item\em Multiplica dos matrices usando el algoritmo transpuesto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{modulo_8c_ab6bb5d15dd18386c88f37cbe7adf3fa5}{print\+\_\+matrix}} (int sz, double $\ast$matriz)
+\begin{DoxyCompactList}\small\item\em Imprime la matriz de tamaño específico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{modulo_8c_a31dd30fb82dbe27ec2fb4f2fa7d4adbd}{llenar\+\_\+matriz}} (int SZ)
+\begin{DoxyCompactList}\small\item\em Llena la matriz con valores específicos. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{modulo_8c_ac991ea55c40d9e9951d92ac0d55bb233}{mult\+\_\+thread}} (void $\ast$variables)
+\begin{DoxyCompactList}\small\item\em Función ejecutada por cada hilo para realizar la multiplicación de matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct timeval \mbox{\hyperlink{modulo_8c_a964358a1cd5e102b918a24d32805b6df}{ini}}
+\begin{DoxyCompactList}\small\item\em Tiempo de inicio para las mediciones. \end{DoxyCompactList}\item 
+struct timeval \mbox{\hyperlink{modulo_8c_a3648aa2a2d4437266f3649876ff598ea}{fin}}
+\begin{DoxyCompactList}\small\item\em Tiempo de finalización para las mediciones. \end{DoxyCompactList}\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{modulo_8c_a501bab4ac67f8eebf6e2269686c449f3}{MM\+\_\+mutex}}
+\begin{DoxyCompactList}\small\item\em Mutex para la sincronización. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{modulo_8c_ac789b32399aaa6c378e5596bf08754aa}{MEM\+\_\+\+CHUNK}} \mbox{[}\mbox{\hyperlink{modulo_8h_af55149bc1f05cf18af067a302e31e3f9}{DATA\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Bloque de memoria para el almacenamiento de datos. \end{DoxyCompactList}\item 
+double $\ast$ \mbox{\hyperlink{modulo_8c_a019f93ac73a4f7134d42403814fed306}{mA}}
+\item 
+double $\ast$ \mbox{\hyperlink{modulo_8c_ac8572cd8076da4e4134cfb2c6b4d75bf}{mB}}
+\item 
+double $\ast$ \mbox{\hyperlink{modulo_8c_a54fc132349c88dd90e32a9348f613583}{mC}}
+\begin{DoxyCompactList}\small\item\em Punteros globales a las matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{modulo_8c_af55149bc1f05cf18af067a302e31e3f9}\label{modulo_8c_af55149bc1f05cf18af067a302e31e3f9}} 
+\index{modulo.c@{modulo.c}!DATA\_SIZE@{DATA\_SIZE}}
+\index{DATA\_SIZE@{DATA\_SIZE}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{DATA\_SIZE}{DATA\_SIZE}}
+{\footnotesize\ttfamily \#define DATA\+\_\+\+SIZE~(1024$\ast$1024$\ast$64$\ast$3)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{modulo_8c_a9ad5337e8c642a7394ce78f6db0587c7}\label{modulo_8c_a9ad5337e8c642a7394ce78f6db0587c7}} 
+\index{modulo.c@{modulo.c}!FinMuestra@{FinMuestra}}
+\index{FinMuestra@{FinMuestra}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{FinMuestra()}{FinMuestra()}}
+{\footnotesize\ttfamily void Fin\+Muestra (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finaliza la medición de tiempo. 
+
+\mbox{\Hypertarget{modulo_8c_a56087d13d537c07c9032bb105969b412}\label{modulo_8c_a56087d13d537c07c9032bb105969b412}} 
+\index{modulo.c@{modulo.c}!impMatrix@{impMatrix}}
+\index{impMatrix@{impMatrix}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{impMatrix()}{impMatrix()}}
+{\footnotesize\ttfamily void imp\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t $\ast$}]{matrix,  }\item[{int}]{D,  }\item[{int}]{t }\end{DoxyParamCaption})}
+
+
+
+Imprime la matriz según el formato de impresión especificado. 
+
+Imprime la matriz según el formato especificado.
+
+Función Impresión de Matriz
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Puntero a los datos de la matriz. \\
+\hline
+{\em D} & Dimensión de la matriz. \\
+\hline
+{\em t} & Tipo de impresión. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{modulo_8c_adbe280fa8ac0175ef5bfefaf47e0b400}\label{modulo_8c_adbe280fa8ac0175ef5bfefaf47e0b400}} 
+\index{modulo.c@{modulo.c}!InicioMuestra@{InicioMuestra}}
+\index{InicioMuestra@{InicioMuestra}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{InicioMuestra()}{InicioMuestra()}}
+{\footnotesize\ttfamily void Inicio\+Muestra (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicializa la medición de tiempo. 
+
+\mbox{\Hypertarget{modulo_8c_a257708eabe3e8419e0630ad1395c0d4f}\label{modulo_8c_a257708eabe3e8419e0630ad1395c0d4f}} 
+\index{modulo.c@{modulo.c}!iniMatrix@{iniMatrix}}
+\index{iniMatrix@{iniMatrix}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{iniMatrix()}{iniMatrix()}}
+{\footnotesize\ttfamily void ini\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t $\ast$}]{m1,  }\item[{size\+\_\+t $\ast$}]{m2,  }\item[{int}]{D }\end{DoxyParamCaption})}
+
+
+
+Inicializa dos matrices con valores aleatorios. 
+
+INICIALIZACIÖN de Matriz
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & Puntero a la primera matriz. \\
+\hline
+{\em m2} & Puntero a la segunda matriz. \\
+\hline
+{\em D} & Dimensión de las matrices. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{modulo_8c_a31dd30fb82dbe27ec2fb4f2fa7d4adbd}\label{modulo_8c_a31dd30fb82dbe27ec2fb4f2fa7d4adbd}} 
+\index{modulo.c@{modulo.c}!llenar\_matriz@{llenar\_matriz}}
+\index{llenar\_matriz@{llenar\_matriz}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{llenar\_matriz()}{llenar\_matriz()}}
+{\footnotesize\ttfamily void llenar\+\_\+matriz (\begin{DoxyParamCaption}\item[{int}]{SZ }\end{DoxyParamCaption})}
+
+
+
+Llena la matriz con valores específicos. 
+
+Llena una matriz con valores específicos según su tamaño.
+
+
+\begin{DoxyParams}{Parameters}
+{\em SZ} & Tamaño de la matriz. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{modulo_8c_ac4ab20b0c0f03e650a3234ff1af62d38}\label{modulo_8c_ac4ab20b0c0f03e650a3234ff1af62d38}} 
+\index{modulo.c@{modulo.c}!Muestra@{Muestra}}
+\index{Muestra@{Muestra}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{Muestra()}{Muestra()}}
+{\footnotesize\ttfamily void Muestra (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra el tiempo transcurrido. 
+
+\mbox{\Hypertarget{modulo_8c_ac991ea55c40d9e9951d92ac0d55bb233}\label{modulo_8c_ac991ea55c40d9e9951d92ac0d55bb233}} 
+\index{modulo.c@{modulo.c}!mult\_thread@{mult\_thread}}
+\index{mult\_thread@{mult\_thread}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{mult\_thread()}{mult\_thread()}}
+{\footnotesize\ttfamily void$\ast$ mult\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{variables }\end{DoxyParamCaption})}
+
+
+
+Función ejecutada por cada hilo para realizar la multiplicación de matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em variables} & Puntero a la estructura que contiene los parámetros del hilo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Puntero al resultado (NULL). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{modulo_8c_aedbf550d79b1762bb9af55e22da5d589}\label{modulo_8c_aedbf550d79b1762bb9af55e22da5d589}} 
+\index{modulo.c@{modulo.c}!multiMatrixClasica@{multiMatrixClasica}}
+\index{multiMatrixClasica@{multiMatrixClasica}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{multiMatrixClasica()}{multiMatrixClasica()}}
+{\footnotesize\ttfamily void multi\+Matrix\+Clasica (\begin{DoxyParamCaption}\item[{size\+\_\+t $\ast$}]{mA,  }\item[{size\+\_\+t $\ast$}]{mB,  }\item[{size\+\_\+t $\ast$}]{mC,  }\item[{int}]{D }\end{DoxyParamCaption})}
+
+
+
+Multiplica dos matrices usando el algoritmo clásico (fila x columna). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mA} & Puntero a la primera matriz. \\
+\hline
+{\em mB} & Puntero a la segunda matriz. \\
+\hline
+{\em mC} & Puntero a la matriz resultado. \\
+\hline
+{\em D} & Dimensión de las matrices. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{modulo_8c_af6debcb3a740cdc3a7675c8ac49a1843}\label{modulo_8c_af6debcb3a740cdc3a7675c8ac49a1843}} 
+\index{modulo.c@{modulo.c}!multiMatrixTranspuesta@{multiMatrixTranspuesta}}
+\index{multiMatrixTranspuesta@{multiMatrixTranspuesta}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{multiMatrixTranspuesta()}{multiMatrixTranspuesta()}}
+{\footnotesize\ttfamily void multi\+Matrix\+Transpuesta (\begin{DoxyParamCaption}\item[{size\+\_\+t $\ast$}]{mA,  }\item[{size\+\_\+t $\ast$}]{mB,  }\item[{size\+\_\+t $\ast$}]{mC,  }\item[{int}]{D }\end{DoxyParamCaption})}
+
+
+
+Multiplica dos matrices usando el algoritmo transpuesto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mA} & Puntero a la primera matriz. \\
+\hline
+{\em mB} & Puntero a la segunda matriz. \\
+\hline
+{\em mC} & Puntero a la matriz resultado. \\
+\hline
+{\em D} & Dimensión de las matrices. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{modulo_8c_ab6bb5d15dd18386c88f37cbe7adf3fa5}\label{modulo_8c_ab6bb5d15dd18386c88f37cbe7adf3fa5}} 
+\index{modulo.c@{modulo.c}!print\_matrix@{print\_matrix}}
+\index{print\_matrix@{print\_matrix}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{print\_matrix()}{print\_matrix()}}
+{\footnotesize\ttfamily void print\+\_\+matrix (\begin{DoxyParamCaption}\item[{int}]{sz,  }\item[{double $\ast$}]{matriz }\end{DoxyParamCaption})}
+
+
+
+Imprime la matriz de tamaño específico. 
+
+Imprime una matriz de tamaño específico.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sz} & Tamaño de la matriz. \\
+\hline
+{\em matriz} & Puntero a los datos de la matriz. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{modulo_8c_a3648aa2a2d4437266f3649876ff598ea}\label{modulo_8c_a3648aa2a2d4437266f3649876ff598ea}} 
+\index{modulo.c@{modulo.c}!fin@{fin}}
+\index{fin@{fin}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{fin}{fin}}
+{\footnotesize\ttfamily struct timeval fin}
+
+
+
+Tiempo de finalización para las mediciones. 
+
+\mbox{\Hypertarget{modulo_8c_a964358a1cd5e102b918a24d32805b6df}\label{modulo_8c_a964358a1cd5e102b918a24d32805b6df}} 
+\index{modulo.c@{modulo.c}!ini@{ini}}
+\index{ini@{ini}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{ini}{ini}}
+{\footnotesize\ttfamily struct timeval ini}
+
+
+
+Tiempo de inicio para las mediciones. 
+
+\mbox{\Hypertarget{modulo_8c_a019f93ac73a4f7134d42403814fed306}\label{modulo_8c_a019f93ac73a4f7134d42403814fed306}} 
+\index{modulo.c@{modulo.c}!mA@{mA}}
+\index{mA@{mA}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{mA}{mA}}
+{\footnotesize\ttfamily double$\ast$ mA}
+
+\mbox{\Hypertarget{modulo_8c_ac8572cd8076da4e4134cfb2c6b4d75bf}\label{modulo_8c_ac8572cd8076da4e4134cfb2c6b4d75bf}} 
+\index{modulo.c@{modulo.c}!mB@{mB}}
+\index{mB@{mB}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{mB}{mB}}
+{\footnotesize\ttfamily double $\ast$ mB}
+
+\mbox{\Hypertarget{modulo_8c_a54fc132349c88dd90e32a9348f613583}\label{modulo_8c_a54fc132349c88dd90e32a9348f613583}} 
+\index{modulo.c@{modulo.c}!mC@{mC}}
+\index{mC@{mC}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{mC}{mC}}
+{\footnotesize\ttfamily double $\ast$ mC}
+
+
+
+Punteros globales a las matrices. 
+
+\mbox{\Hypertarget{modulo_8c_ac789b32399aaa6c378e5596bf08754aa}\label{modulo_8c_ac789b32399aaa6c378e5596bf08754aa}} 
+\index{modulo.c@{modulo.c}!MEM\_CHUNK@{MEM\_CHUNK}}
+\index{MEM\_CHUNK@{MEM\_CHUNK}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{MEM\_CHUNK}{MEM\_CHUNK}}
+{\footnotesize\ttfamily double MEM\+\_\+\+CHUNK\mbox{[}\mbox{\hyperlink{modulo_8h_af55149bc1f05cf18af067a302e31e3f9}{DATA\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+Bloque de memoria para el almacenamiento de datos. 
+
+\mbox{\Hypertarget{modulo_8c_a501bab4ac67f8eebf6e2269686c449f3}\label{modulo_8c_a501bab4ac67f8eebf6e2269686c449f3}} 
+\index{modulo.c@{modulo.c}!MM\_mutex@{MM\_mutex}}
+\index{MM\_mutex@{MM\_mutex}!modulo.c@{modulo.c}}
+\doxysubsubsection{\texorpdfstring{MM\_mutex}{MM\_mutex}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t MM\+\_\+mutex}
+
+
+
+Mutex para la sincronización. 
+
