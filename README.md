@@ -2,7 +2,7 @@
 
 ## Description
 
-Esta es una aplicación para diferenciar diferentes formas de realizar una multiplicación de matrices usando OpenMP y threads. Este proyecto busca explorar el rendimiento y la eficiencia de distintas implementaciones de multiplicación de matrices en C++.
+Esta es una aplicación para diferenciar diferentes formas de realizar una multiplicación de matrices usando OpenMP y threads. Este proyecto busca explorar el rendimiento y la eficiencia de distintas implementaciones de multiplicación de matrices en C.
 
 ## Prerequisites
 
