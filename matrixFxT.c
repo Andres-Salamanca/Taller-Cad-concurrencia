@@ -31,7 +31,6 @@ int main(int argc, char *argv[]){
     omp_set_num_threads(HILOS);
     iniMatrix(matrixA, matrixB, N);
 
-    printf("\n----\n");
     impMatrix(matrixA, N, 0);
     impMatrix(matrixB, N, 1);
 

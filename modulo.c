@@ -65,7 +65,6 @@ void impMatrix(size_t *matrix, int D, int t){
 					aux++;
 					printf("\n");
 				}
-				printf("\n - \n");
 				break;
 			default:
 				printf("Sin tipo de impresión \n");
@@ -104,7 +103,6 @@ void multiMatrixClasica(size_t *mA, size_t *mB, size_t *mC, int D){
 size_t Suma, *pA, *pB;
 	int threads; 
 	threads = omp_get_num_threads();
-	printf("\nNumero de Hilos: %d\n ", threads);
 
     #pragma omp for
 	for(int i=0; i<D; i++){
@@ -171,7 +169,6 @@ void print_matrix(int sz, double *matriz) {
             printf(" %.3f ", matriz[i]);
         }
     }
-    printf("\n>-------------------->\n");
 }
 
 /**
